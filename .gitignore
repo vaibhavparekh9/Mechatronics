@@ -1,0 +1,12 @@
+# colcon build artifacts
+bot_ws/build/
+bot_ws/install/
+bot_ws/log/
+
+turtlebot3_ws/
+
+# cloned third-party source (can be re-cloned)
+bot_ws/src/realsense-ros/
+
+# notes
+common_errors.md

@@ -1,0 +1,354 @@
+<?xml version="1.0"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="bot" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro"/>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0090355 -0.00081058 0.054985"
+        rpy="0 0 0" />
+      <mass
+        value="3.8106" />
+      <inertia
+        ixx="0.0099101"
+        ixy="4.1861E-06"
+        ixz="-2.3327E-05"
+        iyy="0.0095546"
+        iyz="1.2673E-06"
+        izz="0.014844" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bot_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bot_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="whl_1">
+    <inertial>
+      <origin
+        xyz="-4.6546643535636E-05 0.0184649144401945 -9.60864166317521E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.161925631703351" />
+      <inertia
+        ixx="2.91585888217252E-05"
+        ixy="3.04375273962305E-08"
+        ixz="-3.53176898294463E-09"
+        iyy="3.99354081282925E-05"
+        iyz="6.22129550900563E-09"
+        izz="2.91745211707256E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bot_urdf/meshes/whl_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bot_urdf/meshes/whl_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_to_whl_1"
+    type="continuous">
+    <origin
+      xyz="-0.14617 -0.17071 0.00893"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="whl_1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="whl_2">
+    <inertial>
+      <origin
+        xyz="-1.42304344429856E-05 0.0184648963324513 -4.53413374142814E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.161925540652592" />
+      <inertia
+        ixx="2.91737150546211E-05"
+        ixy="9.37189437559857E-09"
+        ixz="-4.960431769033E-09"
+        iyy="3.99353659653103E-05"
+        iyz="2.96158387822672E-08"
+        izz="2.91593473966099E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bot_urdf/meshes/whl_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bot_urdf/meshes/whl_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_to_whl_2"
+    type="continuous">
+    <origin
+      xyz="0.14544 -0.17065 0.0088896"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="whl_2" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="whl_3">
+    <inertial>
+      <origin
+        xyz="-4.75208019316276E-05 -0.018464912170312 2.07987491535055E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.161925572925952" />
+      <inertia
+        ixx="2.91578320363315E-05"
+        ixy="-3.10735992953256E-08"
+        ixz="1.62865442558429E-10"
+        iyy="3.99353787068514E-05"
+        iyz="7.59677902960821E-11"
+        izz="2.91752481149221E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bot_urdf/meshes/whl_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bot_urdf/meshes/whl_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_to_whl_3"
+    type="continuous">
+    <origin
+      xyz="-0.14607 0.16884 0.008895"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="whl_3" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="whl_4">
+    <inertial>
+      <origin
+        xyz="3.89172170524588E-05 -0.0184649028365155 2.72989481698155E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.161925524937385" />
+      <inertia
+        ixx="2.91634990423733E-05"
+        ixy="2.53961263494293E-08"
+        ixz="-8.19472232340164E-09"
+        iyy="3.9935338181181E-05"
+        iyz="1.78964048312848E-08"
+        izz="2.91695348973513E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bot_urdf/meshes/whl_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bot_urdf/meshes/whl_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_to_whl_4"
+    type="continuous">
+    <origin
+      xyz="0.14531 0.16879 0.0089084"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="whl_4" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <xacro:sensor_d435 parent="base_link" name="camera" use_nominal_extrinsics="true">
+    <origin xyz="0.16726 -0.00092784 0.43836" rpy="0 0.38397 0"/>
+  </xacro:sensor_d435>
+
+  <!-- ============ Gazebo: surface friction for wheels ============ -->
+  <gazebo reference="whl_1">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+  </gazebo>
+  <gazebo reference="whl_2">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+  </gazebo>
+  <gazebo reference="whl_3">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+  </gazebo>
+  <gazebo reference="whl_4">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+  </gazebo>
+
+  <!-- ============ Gazebo: holonomic planar move (mecanum) ============ -->
+  <gazebo>
+    <plugin name="bot_planar_move" filename="libgazebo_ros_planar_move.so">
+      <ros>
+        <remapping>cmd_vel:=cmd_vel</remapping>
+        <remapping>odom:=odom</remapping>
+      </ros>
+      <update_rate>50</update_rate>
+      <publish_rate>50</publish_rate>
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+    </plugin>
+  </gazebo>
+
+  <!-- ============ Gazebo: joint state publisher ============ -->
+  <gazebo>
+    <plugin name="bot_joint_state" filename="libgazebo_ros_joint_state_publisher.so">
+      <ros>
+        <remapping>~/out:=joint_states</remapping>
+      </ros>
+      <update_rate>50</update_rate>
+      <joint_name>base_to_whl_1</joint_name>
+      <joint_name>base_to_whl_2</joint_name>
+      <joint_name>base_to_whl_3</joint_name>
+      <joint_name>base_to_whl_4</joint_name>
+    </plugin>
+  </gazebo>
+
+  <!-- ============ Gazebo: RealSense D435 depth camera ============ -->
+  <gazebo reference="camera_link">
+    <sensor name="realsense_d435" type="depth">
+      <always_on>true</always_on>
+      <update_rate>15.0</update_rate>
+      <camera name="camera">
+        <horizontal_fov>1.489</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>B8G8R8</format>
+        </image>
+        <clip>
+          <near>0.105</near>
+          <far>10.0</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="realsense_d435_controller" filename="libgazebo_ros_camera.so">
+        <ros>
+          <namespace>camera</namespace>
+        </ros>
+        <camera_name>camera</camera_name>
+        <frame_name>camera_depth_optical_frame</frame_name>
+        <hack_baseline>0.07</hack_baseline>
+        <min_depth>0.105</min_depth>
+        <max_depth>10.0</max_depth>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>
