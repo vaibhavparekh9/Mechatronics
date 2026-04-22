@@ -8,5 +8,5 @@ turtlebot3_ws/
 # cloned third-party source (can be re-cloned)
 bot_ws/src/realsense-ros/
 
-# notes
-common_errors.md
+# rtabmap workspace (built separately as underlay)
+rtabmap_ws/
