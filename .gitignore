@@ -10,3 +10,7 @@ bot_ws/src/realsense-ros/
 
 # rtabmap workspace (built separately as underlay)
 rtabmap_ws/
+
+# maps
+bot_ws/src/bot_urdf/maps/rtabmap_cloud.ply
+bot_ws/src/bot_urdf/maps/rtabmap.db
