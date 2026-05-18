@@ -1,6 +1,4 @@
-# Mechatronics
-
-ROS 2 Humble workspace for a custom 4-wheeled mecanum-drive robot equipped with an Intel RealSense D435 depth camera. The stack covers URDF description, Gazebo simulation, RTAB-Map SLAM, map export, and Nav2 autonomous navigation.
+ROS 2 Humble workspace for an autonomous custom 4-wheeled mecanum-drive robot equipped with an Intel RealSense D435 depth camera. The stack covers URDF description, Gazebo simulation, RTAB-Map SLAM, map export, and Nav2 autonomous navigation.
 
 This can serve as a reference for integrating SLAM and navigation on any custom robot (not just TurtleBot or Clearpath platforms).
 
