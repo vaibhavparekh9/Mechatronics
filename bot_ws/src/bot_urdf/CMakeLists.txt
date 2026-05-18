@@ -3,7 +3,7 @@ project(bot_urdf)
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY urdf meshes config launch worlds
+install(DIRECTORY urdf meshes config launch worlds maps
   DESTINATION share/${PROJECT_NAME}
 )
 

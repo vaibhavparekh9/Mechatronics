@@ -15,7 +15,7 @@ def generate_launch_description():
     xacro_path = os.path.join(pkg_share, 'urdf', 'bot.urdf.xacro')
     robot_description = xacro.process_file(xacro_path).toxml()
 
-    world_path = os.path.join(pkg_share, 'worlds', 'empty.world')
+    world_path = os.path.join(pkg_share, 'worlds', 'kitchen.world')
 
     # Gazebo converts package:// URIs to model:// when parsing URDF.
     # Register parent dirs of both bot_urdf and realsense2_description so

@@ -125,3 +125,71 @@ Source the workspace before launching RViz:
 source ~/Mechatronics/bot_ws/install/setup.bash
 rviz2
 ```
+
+## [E4] RTAB-Map: "Did not receive data" / no `/map`
+
+### Symptom
+
+- `rgbd_odometry` and/or `rtabmap` log warnings like:
+
+```
+rgbd_odometry: Did not receive data since 5 seconds!
+rgbd_odometry subscribed to:
+  /rgbd_image
+```
+
+- RViz **Map** display shows "No map received"
+- Depth image in RViz may appear black
+
+### Root Cause
+
+RTAB-Map nodes default to **`subscribe_rgbd: True`**, which expects a single combined **`/rgbd_image`** topic. The RealSense D435 (sim or hardware) publishes **separate** RGB and depth topics (`/camera/camera/image_raw`, `/camera/camera/depth/image_raw`, etc.), not a fused `/rgbd_image`.
+
+If launch files or manual `ros2 run` commands omit the correct mode, nodes subscribe to the wrong topic and never receive data.
+
+### Solution
+
+Use **`subscribe_depth: True`** (not `subscribe_rgbd: True`) and remap the individual camera topics. This is already set in `mapping.launch.py` and `navigation.launch.py`:
+
+```python
+parameters=[{
+    'subscribe_depth': True,
+    'approx_sync': True,
+}],
+remappings=[
+    ('rgb/image', '/camera/camera/image_raw'),
+    ('rgb/camera_info', '/camera/camera/camera_info'),
+    ('depth/image', '/camera/camera/depth/image_raw'),
+],
+```
+
+Verify camera topics are publishing before starting RTAB-Map:
+
+```bash
+ros2 topic hz /camera/camera/image_raw
+ros2 topic hz /camera/camera/depth/image_raw
+```
+
+## [E5] Workspace source order: missing packages or nodes at launch
+
+### Symptom
+
+- `ros2 launch bot_urdf mapping.launch.py` or `navigation.launch.py` fails with **package not found** (e.g. `rtabmap_odom`, `rtabmap_slam`, `rtabmap_util`)
+- `ros2 pkg prefix bot_urdf` works in one terminal but RTAB-Map executables are not found
+- Nodes start but behave as if RTAB-Map was never built
+
+### Root Cause
+
+`bot_ws` depends on packages built in **`rtabmap_ws`** as an underlay. Sourcing only `bot_ws` (or sourcing in the wrong order) leaves RTAB-Map packages off the `AMENT_PREFIX_PATH`.
+
+### Solution
+
+Always source in this order in **every terminal** that runs mapping or navigation:
+
+```bash
+source /opt/ros/humble/setup.bash
+source ~/Mechatronics/rtabmap_ws/install/setup.bash
+source ~/Mechatronics/bot_ws/install/setup.bash
+```
+
+Gazebo-only workflows can use `bot_ws` alone, but any terminal running RTAB-Map or Nav2 with RTAB-Map localization needs both overlays.
