@@ -334,3 +334,6 @@ See [common_errors.md](common_errors.md) for detailed diagnosis and fixes:
 - **[E3]** RViz: "Package does not exist" for meshes
 - **[E4]** RTAB-Map: "Did not receive data" / no `/map`
 - **[E5]** Workspace source order: missing packages or nodes at launch
+
+<img src="images/rviz_kitchen.png">
+<img src="images/gazebo_kitchen.png">
